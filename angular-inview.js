@@ -186,6 +186,7 @@
       return;
     }
     _windowEventsHandlerBinded = true;
+    angular.element('.inview-scrollable').bind('scroll', windowEventsHandler);
     return angular.element(window).bind('checkInView click ready wheel mousewheel DomMouseScroll MozMousePixelScroll resize scroll touchmove mouseup', windowEventsHandler);
   };
 
@@ -197,6 +198,7 @@
       return;
     }
     _windowEventsHandlerBinded = false;
+    angular.element('.inview-scrollable').unbind('scroll', windowEventsHandler);
     return angular.element(window).unbind('checkInView click ready wheel mousewheel DomMouseScroll MozMousePixelScroll resize scroll touchmove mouseup', windowEventsHandler);
   };
 
